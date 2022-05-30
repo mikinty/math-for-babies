@@ -1,0 +1,64 @@
+\usepackage{amsmath, amstext}
+\usepackage{chessboard}
+\usepackage{float}
+\usepackage{fontspec}
+\usepackage[pass]{geometry}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref} % allow for URL wrapping
+\usepackage[toc]{glossaries} % MUST BE AFTER hyperref
+\usepackage{longtable}
+\usepackage{makeidx}
+\usepackage[super]{nth}
+\usepackage{tcolorbox}
+\usepackage[standard]{ntheorem}
+
+\author{MICHAEL YOU}
+\title{MATH: FROM START TO FINISH}
+\date{}
+
+%%% MEMOIR DOCUMENT SETUP
+\newfontfamily{\garamond}{Garamond}
+
+% Change margins
+\setlrmarginsandblock{1in}{0.5in}{*}
+\setulmarginsandblock{1in}{1in}{*}
+\checkandfixthelayout
+
+% Un-italicize header
+\nouppercaseheads
+\makeevenhead{headings}{\thepage}{}{\leftmark}
+\makeoddhead{headings}{\rightmark}{}{\thepage}
+
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\huge\raggedright \@title\par}%
+    \hrulefill\par
+    {\large\raggedleft \@author\par}%
+    \vskip 1cm
+  \end{center}%
+  \vfill
+  \null
+}
+
+%%% MACROS
+\newcommand{\te}[1]{\texttt{#1}} % For programming font
+
+% Math
+% Exercise theorem env
+\theoremstyle{break}
+\theorembodyfont{\upshape} % No italics in body font
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem{note}{Note}[section]
+
+% Color boxes
+\newtcolorbox{bluebox}{colback=blue!5!white,colframe=blue!75!black}
+
+% Tables
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% Indexing
+\makeindex
