@@ -1,2 +1,157 @@
 \chapter{Number Sense}
 
+To start off our math journey, let's learn about arithmetic. While this sounds trivial, number sense is an essential foundation to becoming familiar with numbers, and getting a sense of how they work.
+What does this mean? It means you are able to approximate complex arithmetic problems very fast, be able to quantize properties in real life quickly, and in general be able to describe the world around you with numbers.
+This will make it easier to learn and play with numbers in more advanced topics later on.
+
+For a more comprehensive set of Number Sense Tricks, see \cite{heath_number_sense}.
+
+\section{Mental Toughness}
+
+Before learning any tricks for arithmetic, an important mindset to have when doing any math problem is resilience, meaning you need to be trying to solve a problem the entire time you are given it and not give up no matter how difficult it is, and not being scared of solving difficult problems that you know how to solve but are annoying.
+The former is difficult without first having a large toolbox to at least try things, but the latter is pretty easy to do, but hard to do in practice because people get scared or are lazy.
+
+From elementary school, we are capable of solving problems like
+
+\begin{example}
+  Compute $2758282 + 99267347$
+\end{example}
+
+or
+
+\begin{example}
+  Compute $9184616\times 7188427$
+\end{example}
+
+Although these problems seem difficult, there is no skill that you don't have that you would need to solve these problems. All you need is the mental toughness to get through the problem, and neat enough handwriting\footnote{You don't need amazing handwriting to do math, but you need to be able to look through your own work and identify what you've been doing}
+in order to do this problem, and some time as well. But the bottom line is, you should not be \textit{scared} of problems like this. They should be ez-pz ``free lunch'' type questions that you should be eager to take on.
+
+\section{Addition and Subtraction}
+
+Doing standard carry addition and subtraction is very reasonable, but there are times when can make our lives easier by manipulating our problems to have round numbers.
+
+\begin{example}
+  Compute $1999 + 17$.
+\end{example}
+
+If we were to do the standard carry addition for this, we'd have to do $9 + 7 = 16$, carry the one, $9 + 1 + 1 = 11$, carry the one...
+But there is no need for this! If we recognize that
+\begin{equation*}
+  1999 + 17 = (2000 - 1) + 17 = 2017 -1 = 2016,
+\end{equation*}
+we can arrive at our answer much faster.
+
+\begin{theorem}
+  If we have some expression
+  \begin{equation}
+    A + B
+  \end{equation}
+  and $A$ is $\delta$ away from some round number $N$, we can instead perform the operation
+  \begin{equation}
+    (N - \delta) + B
+  \end{equation}
+\end{theorem}
+
+This might be a fancy way to state this generalization, but the idea is to spot for round numbers when adding complex numbers.
+
+\section{Multiplication and Division}
+
+While we learn multiplication and division separately usually, they are actually quite similar if we take a look at how we can manipulate their operands.
+In school, we learn multiplication tables and a multiply-and-carry method, similar to addition, and for division we usually learn long division, which is a painful method of finding multiples of the divisor.
+While these methods are fine if we have no other tricks up our sleeve, it is useful to learn some tricks to help with complex multiplication and division computation.
+
+%%% New section here probs
+\begin{example}
+  Compute $\frac{1260}{1844}$.
+  \label{ex:factoring}
+\end{example}
+
+While we can just do long division, it would be extremely painful to have to find multiples of $1844$ that go into $38276$.
+Instead what we can do is perform \textbf{prime factorization} on both numbers, and then cancel out common factors first.
+
+So we have
+\begin{equation*}
+  \frac{1260}{294} = \frac{
+    2^2 \cdot 3^2 \cdot 5 \cdot 7
+  }{
+    2 \cdot 3 \cdot 7^2
+  } = \frac{2 \cdot 3 \cdot 5}{7} = \frac{30}{7}
+\end{equation*}
+
+\subsection{Round Numbers}
+
+\begin{example}
+  Compute $164 \times 25$.
+\end{example}
+
+Instead of multiplying by $25$, we can instead recognize that $25 = 100/4$. This makes our life easier because we can now just divide our first number by $4$, and then add two zeros to the end of that result.
+In this example,
+\begin{equation*}
+  164 \times 25 = (164 /4) \times 100 = 41 \times 100 = 4100.
+\end{equation*}
+
+\begin{example}
+  Compute $\frac{146}{5}$.
+\end{example}
+
+While we can do long division here, we can make our lives easier with round numbers again. We know that dividing by $10$ is super easy, because we just have to move the decimal point by one spot to the left.
+So here, why won't we just make our denominator $10$? In this case, we can do that by multiplying the numerator and denominator by 2.
+\begin{equation*}
+  \frac{146}{5} = \frac{292}{10} = 29.2
+\end{equation*}
+So much pain saved from doing long division!
+
+Some other denominators to watch out for here are any multiples of $10, 100$ and $10^n$ in general, since for example if you have
+\begin{example}
+  Compute $\frac{712}{125}$.
+\end{example}
+You can recognize that $125 \cdot 8 = 1000$, so let's multiply the numerator and denominator by 8.
+\begin{equation*}
+  \frac{5696}{1000} = 5.696
+\end{equation*}
+
+Note that we can use our experience from prime factorization in \ref{ex:factoring}, combined with round numbers, to hunt down and manipulate our problems into round number problems that are easier to compute.
+\begin{example}
+  Compute $\frac{712}{40}$.
+\end{example}
+Here, we notice that 712 is divisible by 4, so we can divide the numerator and denominator by 4, and get
+\begin{equation*}
+  \frac{712}{40} = \frac{178}{10} = 17.8
+\end{equation*}
+Notice that we could've multiplied for a divide by 100 round number as well
+\begin{equation*}
+  \frac{712}{40} = \frac{3560}{200} = \frac{1780}{100} = 17.8
+\end{equation*}
+
+\section{Squaring Numbers}
+
+\begin{example}
+  Compute $185^2$.
+\end{example}
+
+\begin{example}
+  Compute $72^2 + 13^2$.
+\end{example}
+
+\section{Exercises}
+
+\begin{exercise}
+  \textit{Mental Toughness.} Come up with a pair of 20-digit numbers, and
+  \begin{enumerate}
+    \item Add them together
+    \item Subtract one from another
+    \item Multiply one from another
+  \end{enumerate}
+  Division is not really practical here, so maybe just choose a 2-digit divisor to divide one of the large numbers.
+
+  The goal of this problem is to convince you that even multiplying very large numbers is not \textit{difficult}\footnote{besides keeping your work organized of course!}, it's just annoying, but hopefully it becomes more like ``free points'' rather than annoying the more you're used to computing these large numbers.
+\end{exercise}
+
+\begin{exercise}
+  Compute the first 50 squares, so $1^2, 2^2, \dots, 50^2$. Feel free to use tricks whenever you can.
+\end{exercise}
+
+\begin{exercise}
+  A great place to practice your arithmetic skills is at \href{https://arithmetic.zetamac.com/}{\te{zetamac}}.
+  If you plan to have a career in trading or quant, a lot of firms like to see that you can compute around 40 of these questions in 120 minutes \footnote{If you're interested in quant career, check out \href{https://github.com/mikinty/Trading-Interview-Questions}{this guide I wrote}.}.
+\end{exercise}
